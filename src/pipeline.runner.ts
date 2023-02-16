@@ -79,6 +79,9 @@ export class PipelineRunner {
             sourceBranch = this.branch,
                 sourceVersion = this.commitId
         } else {
+            if (this.taskParameters.branch) {
+                sourceBranch = this.taskParameters.branch;
+            }
             core.debug("pipeline is not linked to same Github repo");
         }
 
