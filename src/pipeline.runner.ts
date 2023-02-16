@@ -95,7 +95,7 @@ export class PipelineRunner {
             sourceBranch: sourceBranch,
             sourceVersion: sourceVersion,
             reason: BuildInterfaces.BuildReason.Triggered,
-            templateParameters: JSON.parse(this.taskParameters.azurePipelineVariables)
+            parameters: this.taskParameters.azurePipelineVariables
         } as BuildInterfaces.Build;
 
         log.LogPipelineTriggerInput(build);
